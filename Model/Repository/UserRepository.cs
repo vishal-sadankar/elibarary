@@ -50,5 +50,10 @@ namespace furniture.Model.Repository
                 return 0;
             }
         }
+
+        //public UserDTO userlogin(string member_id,string password)
+        //{
+            
+        //}
     }
 }

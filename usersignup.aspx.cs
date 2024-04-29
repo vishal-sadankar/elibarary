@@ -80,7 +80,7 @@ namespace furniture
             int row = repository.newuser(user);
             if (row == 1)
             {
-                Response.Write("<script>alert('Sign Up Successfull. Go to user Login');</script>");
+                Response.Write("<script>alert('Sign Up Successfull. Go to user Login"+user.full_name+"');</script>");
 
                 txtname.Text = string.Empty;
                 txtdob.Text = string.Empty;

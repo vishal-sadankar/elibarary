@@ -11,7 +11,58 @@ namespace furniture
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["role"].Equals(null))
+                {
+                    linkbutton3.Visible = false; //logout link
+                    linkbutton7.Visible = false; //hello user link
+                    linkbutton1.Visible = true; //user login
+                    linkbutton2.Visible = true; //sign up login
 
+                    linkbutton11.Visible = false; //sign up login
+                    linkbutton12.Visible = false; //sign up login
+                    linkbutton8.Visible = false; //sign up login
+                    linkbutton9.Visible = false; //sign up login
+                    linkbutton10.Visible = false; //sign up login
+
+                }
+                else if (Session["role"].Equals("user"))
+                {
+                    linkbutton3.Visible = true; //logout link
+                    linkbutton7.Visible = true; //hello user link
+                    linkbutton7.Text = "Hello "+Session["fullname"].ToString();
+                    linkbutton1.Visible = false; //user login
+                    linkbutton2.Visible = false; //sign up login
+
+                    linkbutton11.Visible = false; //sign up login
+                    linkbutton12.Visible = false; //sign up login
+                    linkbutton8.Visible = false; //sign up login
+                    linkbutton9.Visible = false; //sign up login
+                    linkbutton10.Visible = false; //sign up login
+                }
+                else if (Session["role"].Equals("admin"))
+                {
+                    linkbutton3.Visible = true; //logout link
+                    linkbutton7.Visible = true; //hello user link
+                    linkbutton7.Text = "Hello Admin";
+                    linkbutton1.Visible = false; //user login
+                    linkbutton2.Visible = false; //sign up login
+
+                    linkbutton6.Visible = false; //sign up login
+                    linkbutton11.Visible = true; //sign up login
+                    linkbutton12.Visible = true; //sign up login
+                    linkbutton8.Visible = true; //sign up login
+                    linkbutton9.Visible = true; //sign up login
+                    linkbutton10.Visible = true; //sign up login
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write("<script><alert>('"+ex.Message+"')</script>");
+            }
         }
 
         protected void linkbutton6_Click(object sender, EventArgs e)
@@ -56,12 +107,34 @@ namespace furniture
 
         protected void linkbutton7_Click(object sender, EventArgs e)
         {
-            Response.Redirect("adminlogin.aspx");
+            Response.Redirect("userprofile.aspx");
         }
 
         protected void linkbutton4_Click(object sender, EventArgs e)
         {
             Response.Redirect("viewbooks.aspx");
+        }
+
+        protected void linkbutton3_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Session["fullname"] = null;
+            Session["role"] = null;
+            Session["status"] = null;
+
+            linkbutton3.Visible = false; //logout link
+            linkbutton7.Visible = false; //hello user link
+            linkbutton1.Visible = true; //user login
+            linkbutton2.Visible = true; //sign up login
+
+            linkbutton11.Visible = false; //sign up login
+            linkbutton12.Visible = false; //sign up login
+            linkbutton8.Visible = false; //sign up login
+            linkbutton9.Visible = false; //sign up login
+            linkbutton10.Visible = false; //sign up login
+
+            Response.Redirect("homepage.aspx");
+
         }
     }
 }

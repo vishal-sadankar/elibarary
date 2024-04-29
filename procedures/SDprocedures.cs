@@ -11,7 +11,11 @@ namespace furniture.procedures
             #region User
             public static string AddNewUser = "SPnewuser";
             public static string ValidateUser = "spvalidatemember";
-            #endregion
-        }
-    
+        #endregion
+
+        #region admin
+        public static string ValidateAdmin = "spvalidateadmin";
+        #endregion
+    }
+
 }

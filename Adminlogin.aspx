@@ -34,10 +34,10 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox runat="server" CssClass="form-control" ID="Txtpassword"
-                                        placeholder=" Admin Password" TextMode="Password"></asp:TextBox>
+                                        placeholder=" Admin Password" TextMode="Password" ></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Submit" />
+                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="LOGIN" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>

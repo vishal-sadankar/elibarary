@@ -2226,6 +2226,7 @@
     <Compile Include="adminpublishermanagement.aspx.designer.cs">
       <DependentUpon>adminpublishermanagement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\DTO\AdminDTO.cs" />
     <Compile Include="Model\DTO\UserDTO.cs" />
     <Compile Include="Model\Repository\UserRepository.cs" />
     <Compile Include="procedures\SDprocedures.cs" />
